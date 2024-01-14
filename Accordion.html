@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+  </head>
+  <body>
+    <div>
+      <p>Accordion</p>
+      <div class="accordion">
+        <div style="border: 2px solid black">
+          <div style="display: flex; justify-content: space-between">
+            <p>Section 1</p>
+            <div
+              class="button"
+              style="font-size: 4rem; align-self: center; cursor: pointer"
+              onclick="showAccordion(1)"
+            >
+              +
+            </div>
+          </div>
+          <div class="acc-itm" style="display: none">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi odit
+            illo fugit officiis corrupti fuga ipsam earum necessitatibus minima
+            a repudiandae, quasi quam, eligendi officia. Delectus architecto sit
+            modi placeat.
+          </div>
+        </div>
+        <div style="border: 2px solid black">
+          <div style="display: flex; justify-content: space-between">
+            <p>Section 2</p>
+            <div
+              class="button"
+              style="font-size: 4rem; align-self: center"
+              onclick="showAccordion(2)"
+            >
+              +
+            </div>
+          </div>
+          <div class="acc-itm" style="display: none">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi odit
+            illo fugit officiis corrupti fuga ipsam earum necessitatibus minima
+            a repudiandae, quasi quam, eligendi officia. Delectus architecto sit
+            modi placeat.
+          </div>
+        </div>
+        <div style="border: 2px solid black">
+          <div style="display: flex; justify-content: space-between">
+            <p>Section 3</p>
+            <div
+              class="button"
+              style="font-size: 4rem; align-self: center"
+              onclick="showAccordion(3)"
+            >
+              +
+            </div>
+          </div>
+          <div class="acc-itm" style="display: none">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi odit
+            illo fugit officiis corrupti fuga ipsam earum necessitatibus minima
+            a repudiandae, quasi quam, eligendi officia. Delectus architecto sit
+            modi placeat.
+          </div>
+        </div>
+      </div>
+      <script>
+        let showAccordion = (index) => {
+          let itms = document.getElementsByClassName("acc-itm");
+          for (let i = 0; i < itms.length; i++) {
+            if (i === index - 1) {
+              // Toggle the display state for the clicked section
+              itms[i].style.display =
+                itms[i].style.display === "none" ? "block" : "none";
+            } else {
+              // Close other sections
+              itms[i].style.display = "none";
+            }
+          }
+        };
+      </script>
+    </div>
+  </body>
+</html>
