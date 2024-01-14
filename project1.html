@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SlideShow</title>
+  </head>
+  <body>
+    <div class="container" style="text-align: center">
+      <p>SlideShow</p>
+      <div class="SlideShow">
+        <button onclick="prev()">Previous</button>
+        <img id="slideImage" src="./img_lights_wide.jpg" alt="" />
+        <button onclick="next()">Next</button>
+      </div>
+    </div>
+
+    <script>
+      const arrImages = [
+        "img_lights_wide.jpg",
+        "img_mountains_wide.jpg",
+        "img_nature_wide.jpg",
+        "img_snow_wide.jpg",
+      ];
+      let slideIndex = 1;
+
+      const showSlide = () => {
+        let slide = document.getElementById("slideImage");
+        if (slideIndex < 1) {
+          slideIndex = 4;
+        }
+        if (slideIndex > 4) {
+          slideIndex = 1;
+        }
+        slide.src = `./${arrImages[slideIndex - 1]}`;
+      };
+
+      const prev = () => {
+        slideIndex--;
+        showSlide();
+      };
+
+      const next = () => {
+        slideIndex++;
+        showSlide();
+      };
+
+      // Initial display
+      showSlide();
+    </script>
+  </body>
+</html>
